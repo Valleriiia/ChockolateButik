@@ -371,7 +371,7 @@ h2 {
   padding-top: 1px;
 }
 
-.active {
+.tab.active {
   color: var(--small-text);
   border-bottom: 2px solid var(--small-text);
 }
@@ -395,6 +395,7 @@ h2 {
 
 .login-form {
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .inputs {
@@ -467,11 +468,8 @@ input:focus-visible {
 
 .cart-item img {
   width: 107px;
-  float: left;
-}
-
-.item-details {
-  padding-left: 146px;
+  align-self: flex-start;
+  margin-top: 5px;
 }
 
 .item-top {
@@ -483,6 +481,7 @@ input:focus-visible {
 .item-text {
   display: flex;
   flex-direction: column;
+  margin-left: 39px;
   gap: 15px;
 }
 
@@ -508,6 +507,7 @@ input:focus-visible {
   font-size: 20px;
   line-height: 27.32px;
   color: var(--small-text);
+  white-space: nowrap;
 }
 
 .remove-btn {
@@ -517,16 +517,17 @@ input:focus-visible {
   line-height: 37px;
   transform: rotate(-45deg);
   background-color: transparent;
+  margin-left: auto;
 }
 
 .quantity-controls {
-  width: 100%;
   border-top: 1px solid var(--color_dark);
   border-bottom: 1px solid var(--color_dark);
   padding: 5px 29px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 146px;
 }
 
 .quantity, .quantity-controls button {
@@ -534,8 +535,7 @@ input:focus-visible {
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  text-align: center;
-
+  text-align: center
 }
 
 .quantity-controls button {
@@ -572,7 +572,88 @@ input:focus-visible {
 
 .order {
   width: 100%;
+  margin: 0 auto;
   margin-bottom: 50px;
+}
+
+@media (max-width: 1050px) {
+  .breadcrmb {
+    margin-bottom: 17px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 44.8px;
+    margin-bottom: 37px;
+  }
+
+  .flex-container {
+    flex-direction: column-reverse;
+  }
+
+  .left, .right {
+    width: 98%;
+    margin: 0 auto;
+  }
+
+  .cart-title {
+    border: none;
+    padding: 0;
+  }
+
+  .cart-item {
+    padding: 20px 0 0;
+    border: none !important;
+  }
+
+  .cart-item img {
+    width: 89.35px;
+  }
+
+  .item-text {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .item-title {
+    font-size: 14px;
+    line-height: 19.12px;
+  }
+
+  .item-desc {
+    display: none;
+  }
+
+  .quantity-controls {
+    padding: 5px;
+    margin: 0;
+  }
+
+  .cart-summary {
+    border: none;
+    margin-bottom: 7px;
+    padding-top: 13px;
+    padding-bottom: 0;
+  }
+
+  .order {
+    margin-bottom: 37px;
+    width: 98%;
+  }
+
+  .tabs {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .tab:first-child {
+    margin-right: 15px;
+  }
+
+  .inputs {
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
 }
 
 footer .top {
