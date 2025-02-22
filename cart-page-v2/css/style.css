@@ -369,6 +369,7 @@ h2 {
   line-height: 28px;
   color: var(--color_lite);
   padding-top: 1px;
+  white-space: nowrap;
 }
 
 .tab.active {
@@ -778,4 +779,31 @@ footer .top {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+  }
+
+  @media (max-width: 1050px) {
+    footer .top .grid4, footer .bot .grid5 {
+      grid-template-columns: auto;
+      justify-items: start;
+    }
+
+    footer .top .grid4 {
+      gap: 35px;
+      padding: 0;
+    }
+
+    footer .bot .grid5 {
+      gap: 19px;
+      margin-top: 24px;
+      margin-bottom: 26px;
+    }
+
+    footer .top .col1 {
+      justify-self: center;
+    }
+
+    footer .top .col3 .box:last-child {
+      margin-bottom: 0;
+    }
+    
   }
