@@ -376,7 +376,7 @@ h2 {
   margin-bottom: 46px;
 }
 
-.tab {
+.tab-label {
   font-family: "Nyght Serif";
   font-weight: 400;
   font-size: 20px;
@@ -384,20 +384,35 @@ h2 {
   color: var(--color_lite);
   padding-top: 1px;
   white-space: nowrap;
+  border-bottom: 2px solid transparent;
   transition: var(--trans);
 }
 
-.tab:not(.active):hover {
+.tab-label:hover {
   color: var(--color_dark);
 }
 
-.tab.active {
+.tabs input[type="radio"] {
+  display: none;
+}
+
+#tab1:checked + .tab-label,
+#tab2:checked + .tab-label {
   color: var(--small-text);
   border-bottom: 2px solid var(--small-text);
 }
 
-.tab:first-child {
+.tab-label:first-of-type {
   margin-right: 66px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tabs:has(#tab1:checked) ~ #content1,
+.tabs:has(#tab2:checked) ~ #content2 {
+  display: block;
 }
 
 .description {
@@ -421,20 +436,35 @@ h2 {
 .inputs {
   display: flex;
   gap: 24px;
-  margin-bottom: 29px;
+  margin-bottom: 20px;
   text-align: left;
+}
+
+fieldset {
+  border: none;
+  margin-top: 20px;
+}
+
+legend {
+  font-family: "Avenir Next";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27.32px;
+  margin-bottom: 10px;
+  color: var(--color_dark);
+
 }
 
 .input {
   border-bottom: 2px solid var(--color_lite);
-  width: 100%;
+  width: 48%;
   padding-bottom: 10px;
 }
 
 .input label {
   font-family: "Avenir Next";
   font-weight: 500;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 13.66px;
   color: var(--color_lite);
 }
@@ -461,12 +491,111 @@ input:focus-visible {
   outline: none;
 }
 
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-family: "Avenir Next";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.86px;
+  color: var(--color_dark);
+  transition: var(--trans);
+}
+
+.checkbox:hover {
+  color: var(--color_lite);
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color_dark);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--trans);
+  margin-right: 8px;
+}
+
+.checkbox:hover .checkmark {
+  border-color: var(--color_lite);
+}
+
+.checkmark svg {
+  opacity: 0;
+}
+
+.checkbox input:checked + .checkmark svg {
+  opacity: 1;
+}
+
+.cupon-container {
+  margin-top: 14px;
+}
+
+#cupon-check {
+  display: none;
+}
+
+.cupon-container {
+    margin-bottom: 33px;
+}
+.cupon-label {
+  font-family: "Avenir Next";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27.32px;
+  color: var(--color_dark);
+  transition: var(--trans);
+}
+
+.cupon-label:hover {
+  color: var(--color_lite);
+}
+
+.cupon {
+  margin-top: 10px;
+  display: none;
+  transition: var(--trans);
+}
+
+.cupon p {
+  font-family: "Avenir Next";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.86px;
+  color: var(--color_dark);
+  margin-bottom: 12px;
+  max-width: 420px;
+}
+
+.cupon .input {
+  display: flex;
+  align-items: flex-end;
+  width: 43%;
+}
+
+#cupon-input::placeholder {
+  color: var(--color_lite);
+}
+
+.cupon-label:has(#cupon-check:checked) ~ #cupon {
+  display: block;
+}
+
 .enter {
   border: none;
   text-align: center;
   margin: 0 auto;
   width: 216px;
   margin-bottom: 13px;
+  margin-top: 29px;
 }
 
 .forgot-pass {
@@ -713,6 +842,10 @@ input:focus-visible {
   .inputs {
     margin-bottom: 40px;
     flex-direction: column;
+  }
+
+  .input {
+    width: 100%;
   }
 }
 
