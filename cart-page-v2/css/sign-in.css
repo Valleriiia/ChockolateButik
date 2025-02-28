@@ -1,0 +1,13 @@
+
+
+.input::-webkit-input-placeholder {
+    position: relative;
+}
+
+  
+
+input::-webkit-input-placeholder::after {
+    content: "*";
+    color: red;
+    position: absolute;
+}
