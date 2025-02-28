@@ -25,8 +25,6 @@
     color: var(--color_lite);
 }
 
-
-
 .sign-up button, .log-in button {
     margin: 0 auto;
     margin-top: 43px;
@@ -56,4 +54,52 @@
 
 .forgot-pass::after  {
     background-color: var(--color_lite);
+}
+
+.for-checkbox {
+    display: none;
+}
+
+@media (max-width: 1050px) {
+    h2 {
+        margin-bottom: 18px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .inputs {
+        margin-bottom: 20px;
+        gap: 20px;
+    }
+
+    .inputs-container {
+        position: relative;
+    }
+
+    .for-checkbox {
+        display: block;
+        border: none;
+        margin-top: 31px;
+    }
+
+    .input:has(.checkbox) {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .sign-up {
+        margin-bottom: 48px;
+        padding-top: 38px;
+    }
+
+    .log-in {
+        padding-top: 38px;
+        margin-bottom: 40px;
+    }
+
+    .log-in .inputs {
+        min-height: 0;
+    }
 }
