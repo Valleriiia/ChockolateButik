@@ -532,7 +532,7 @@ input:focus-visible {
   border-bottom: 2px solid var(--color_dark);
   font-size: 32px;
   line-height: 44.8px;
-  padding: 20px 32px;
+  padding: 20px 0;
 }
 
 @media (max-width: 1050px) {

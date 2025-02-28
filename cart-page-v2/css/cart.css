@@ -94,6 +94,10 @@
   display: block;
 }
 
+.container-title {
+    padding: 20px 32px;
+}
+
 .cart-items {
   max-height: calc(2 * 245px);
   overflow-y: auto;
