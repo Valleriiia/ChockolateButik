@@ -58,6 +58,7 @@
   line-height: 27.32px;
   color: var(--color_dark);
   transition: var(--trans);
+  cursor: pointer;
 }
   
 .cupon-label:hover {
@@ -229,8 +230,12 @@
   margin-bottom: 50px;
 }
 
-@media (max-width: 1050px) {  
-  .cart-title {
+@media (max-width: 1019px) {  
+    h2 {
+      margin-bottom: 37px;
+    }
+
+  .container-title {
     border: none;
     padding: 0;
   }
@@ -252,6 +257,7 @@
   .item-text {
     flex-direction: row;
     align-items: center;
+    margin-right: 14px;
   }
  
   .item-title {
@@ -261,6 +267,10 @@
 
   .item-desc {
     display: none;
+  }
+
+  .remove-btn {
+    padding-top: 3px;
   }
 
   .quantity-controls {
@@ -280,7 +290,15 @@
     width: 98%;
   }
 
-  .tab:first-child {
-    margin-right: 15px;
+  .tabs {
+    width: 100%;
+  }
+
+  .left {
+    margin: 0;
+  }
+
+  .tab-label:first-of-type {
+    margin-right: 8px;
   }
 }

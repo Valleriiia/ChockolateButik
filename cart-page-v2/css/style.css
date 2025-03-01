@@ -386,6 +386,7 @@ h2 {
   white-space: nowrap;
   border-bottom: 2px solid transparent;
   transition: var(--trans);
+  cursor: pointer;
 }
 
 .tab-label:hover {
@@ -415,9 +416,7 @@ legend {
 }
 
 .input {
-  border-bottom: 2px solid var(--color_lite);
   width: 48%;
-  padding-bottom: 10px;
 }
 
 .input label {
@@ -436,13 +435,22 @@ legend {
   font-size: 16px;
   line-height: 21.86px;
   color: var(--color_dark);
+  border-bottom: 2px solid var(--color_lite);
+  padding-bottom: 10px;
+  transition: var(--trans);
+}
+
+.selector{
+  border-bottom: 2px solid var(--color_lite);
+  padding-bottom: 10px;
+  transition: var(--trans);
 }
 
 .input input::placeholder {
   color: var(--color_dark);
 }
 
-.input:hover, .input:focus-within {
+.input:hover input, .input:focus-within input, .input:hover .selector, .input:focus-within .selector {
   border-bottom: 2px solid var(--color_dark);
 }
 
@@ -460,6 +468,7 @@ input:focus-visible {
   line-height: 21.86px;
   color: var(--color_dark);
   transition: var(--trans);
+  gap: 8px;
 }
 
 .checkbox:hover {
@@ -479,7 +488,7 @@ input:focus-visible {
   align-items: center;
   justify-content: center;
   transition: var(--trans);
-  margin-right: 8px;
+  flex-shrink: 0;
 }
 
 .checkbox:hover .checkmark {
@@ -535,7 +544,12 @@ input:focus-visible {
   padding: 20px 0;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1019px) {
+  h2 {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
   .breadcrmb {
     margin-bottom: 17px;
   }

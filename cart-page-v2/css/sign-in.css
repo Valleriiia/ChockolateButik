@@ -56,11 +56,19 @@
     background-color: var(--color_lite);
 }
 
+.forgot-pass:hover {
+    color: var(--color_dark);
+}
+
+.forgot-pass:hover::after {
+    background-color: var(--color_dark);
+}
+
 .for-checkbox {
     display: none;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1019px) {
     h2 {
         margin-bottom: 18px;
     }
@@ -80,8 +88,8 @@
 
     .for-checkbox {
         display: block;
-        border: none;
-        margin-top: 31px;
+        border: 1px solid transparent;
+        margin-top: 41px;
     }
 
     .input:has(.checkbox) {
