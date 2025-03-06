@@ -372,25 +372,14 @@ h2 {
   width: 48%;
 }
 
-.tabs {
-  margin-bottom: 46px;
-}
-
 .tab-label {
   font-family: "Nyght Serif";
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  color: var(--color_lite);
-  padding-top: 1px;
   white-space: nowrap;
-  border-bottom: 2px solid transparent;
   transition: var(--trans);
   cursor: pointer;
-}
-
-.tab-label:hover {
-  color: var(--color_dark);
 }
 
 .inputs {
@@ -458,7 +447,7 @@ input:focus-visible {
   outline: none;
 }
 
-.checkbox {
+label.checkbox {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
@@ -546,7 +535,6 @@ input:focus-visible {
 
 @media (max-width: 1019px) {
   h2 {
-    max-width: 250px;
     margin: 0 auto;
   }
 
@@ -567,11 +555,6 @@ input:focus-visible {
   .left, .right {
     width: 98%;
     margin: 0 auto;
-  }
-
-  .tabs {
-    text-align: center;
-    margin-bottom: 40px;
   }
 
   .inputs {

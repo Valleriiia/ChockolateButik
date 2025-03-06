@@ -3,8 +3,22 @@
   margin-bottom: 40px;
 }
 
+.tabs {
+  margin-bottom: 46px;
+}
+
 .tabs input[type="radio"] {
   display: none;
+}
+
+.tab-label {
+  color: var(--color_lite);
+  padding-top: 1px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-label:hover {
+  color: var(--color_dark);
 }
   
 #tab1:checked + .tab-label,
@@ -233,11 +247,17 @@
 @media (max-width: 1019px) {  
     h2 {
       margin-bottom: 37px;
+      max-width: 250px;
     }
 
   .container-title {
     border: none;
     padding: 0;
+  }
+
+  .tabs {
+    text-align: center;
+    margin-bottom: 40px;
   }
 
   .cart-items {

@@ -71,6 +71,7 @@
 @media (max-width: 1019px) {
     h2 {
         margin-bottom: 18px;
+        max-width: 250px;
     }
 
     .flex-container {

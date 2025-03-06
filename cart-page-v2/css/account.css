@@ -1,0 +1,144 @@
+h2 {
+    margin-bottom: 4px;
+}
+
+.tabs input[type="radio"] {
+    display: none;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid var(--color_lite);
+    align-items: flex-end;
+    min-height: 76px;
+}
+
+.tab-label {
+    padding: 10.5px 12px;
+    border-top: 2px solid var(--color_dark);
+    text-align: center;
+    flex: 1;
+    color: var(--small_text);
+    height: 49px;
+}
+
+#tab1:checked + .tab-label,
+#tab2:checked + .tab-label,
+#tab3:checked + .tab-label,
+#tab4:checked + .tab-label,
+#tab5:checked + .tab-label,
+#tab6:checked + .tab-label {
+    padding-top: 23px;
+    padding-bottom: 23px;
+    height: 74px;
+    box-shadow: 0px 0px 14px 0px #54483D1A;
+}
+
+.tab-content {
+    display: none;
+}
+    
+.tabs:has(#tab2:checked) ~ #content2,
+.tabs:has(#tab3:checked) ~ #content3,
+.tabs:has(#tab4:checked) ~ #content4,
+.tabs:has(#tab5:checked) ~ #content5,
+.tabs:has(#tab6:checked) ~ #content6 {
+    display: block;
+}
+
+.tabs:has(#tab1:checked) ~ #content1 {
+    display: flex;
+}
+
+.line {
+    border: none;
+    height: 2px;
+    background-color: var(--color_dark);
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1019px) {
+    h2 {
+        margin-bottom: 33px;
+        width: 100%;
+    }
+
+    .tabs {
+        flex-direction: column;
+        border-bottom: 2px solid var(--color_dark);
+        align-items: stretch;
+    }
+
+    #tab1:checked + .tab-label,
+    #tab2:checked + .tab-label,
+    #tab3:checked + .tab-label,
+    #tab4:checked + .tab-label,
+    #tab5:checked + .tab-label,
+    #tab6:checked + .tab-label {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: 68px;
+    }
+
+    .line {
+        display: none;
+    }
+}
+
+.info {
+    gap: 24px;
+    margin-bottom: 138px;
+    margin-top: 33px;
+}
+
+.info form {
+    width: 457px;
+}
+
+.info fieldset {
+    margin-top: 0;
+}
+
+.info legend {
+    font-family: "Nyght Serif";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.info .input {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.info .checkbox {
+    margin-top: 7px;
+}
+
+.info .lite_btn {
+    justify-self: flex-end;
+    width: 216px;
+    padding: 0;
+}
+
+@media (max-width: 1019px) {
+    .info {
+        flex-direction: column;
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+
+    .info form {
+        width: 100%;
+    }
+
+    .info .checkbox {
+        margin-top: 0;
+    }
+
+    .info .lite_btn {
+        margin-top: 10px;
+        justify-self: center;
+    }
+}
+
