@@ -143,6 +143,77 @@ h2 {
 }
 
 
+.wishlist {
+    margin-top: 61px;
+    margin-bottom: 55px;
+}
+
+.wishlist-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 78px 22px;
+    justify-content: center;
+}
+
+.item {
+    width: 405px;
+    text-align: center;
+    position: relative;
+}
+
+.item img {
+    width: 100%;
+}
+
+.item-desc {
+    font-family: "Avenir Next";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    margin-top: 23px;
+    color: var(--small_text);
+}
+
+.item-price {
+    font-family: "Avenir Next";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    margin-top: 8px;
+    color: var(--small_text);
+}
+
+.remove-btn {
+    position: absolute;
+    transform: rotate(-45deg);
+    font-family: "Nyght Serif";
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 37px;
+    color: var(--color_lite);
+    right: 14px;
+    top: 2px;
+    background-color: transparent;
+}
+
+@media (max-width: 1019px) {
+    .wishlist {
+        margin-top: 40px;
+        margin-bottom: 52px;
+    }
+    
+    .wishlist-box {
+        gap: 26px;
+    }
+}
+
+@media (max-width: 969px) {
+    .item {
+        width: 296px;
+    }
+}
+
+
 .delete, .exit {
     margin-top: 40px;
     margin-bottom: 72px;
