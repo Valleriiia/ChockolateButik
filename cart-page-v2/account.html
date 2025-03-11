@@ -185,7 +185,68 @@
 
             </div>
             <div class="tab-content addresses" id="content3">
-
+                <div class="flex-container">
+                    <div class="delivery-options">
+                        <h4>Адреса</h4>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="address1" checked>
+                            <div class="option-content">
+                                <p class="name">Андрій Чубенко</p>
+                                <p class="street">вул. Шевченка, 4</p>
+                                <p class="address">12345, Львів, Львівська обл., Львівський район</p>
+                                <p class="phone">тел. (066) 123 45 56</p>
+                                <button class="redo">редагувати</button>
+                            </div>
+                        </label>
+                    
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="address2">
+                            <div class="option-content">
+                                <p class="name">Андрій Чубенко</p>
+                                <p class="street">вул. Шевченка, 4</p>
+                                <p class="address">12345, Львів, Львівська обл., Львівський район</p>
+                                <p class="phone">тел. (066) 123 45 56</p>
+                                <button class="redo">редагувати</button>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="add-address">
+                        <form>
+                            <h4>Додати нову адресу</h4>
+                            <div class="input">
+                                <label for="name">Ім’я</label>
+                                <input type="text " id="name" name="name" placeholder="Ім’я">
+                            </div>
+                            <div class="input">
+                                <label for="surname">Прізвище</label>
+                                <input type="text" id="surname" name="surname" placeholder="Прізвище">
+                            </div>
+                            <div class="input">
+                                <label for="street">Вулиця</label>
+                                <input type="text" id="street" name="street" placeholder="Вулиця">
+                            </div>
+                            <div class="input">
+                                <label for="phone">Номер телефону</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Номер телефону">
+                            </div>
+                            <div class="inputs">
+                                <div class="input">
+                                    <label for="bilding">Будинок</label>
+                                    <input type="text" id="bilding" name="bilding" placeholder="Будинок">
+                                </div>
+                                <div class="input">
+                                    <label for="apartment">Квартира</label>
+                                    <input type="text" id="apartment" name="apartment" placeholder="Квартира">
+                                </div>
+                                <div class="input">
+                                    <label for="index">Індекс</label>
+                                    <input type="text" id="index" name="index" placeholder="Індекс">
+                                </div>
+                            </div>
+                            <button class="lite_btn" type="submit">Зберегти</button>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="tab-content wishlist" id="content4">
                 <div class="wishlist-box">

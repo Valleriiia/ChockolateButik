@@ -142,6 +142,139 @@ h2 {
     }
 }
 
+.addresses {
+    margin-top: 27px;
+    margin-bottom: 50px;
+}
+
+.flex-container {
+    gap: 189px;
+}
+
+h4 {
+    font-family: "Nyght Serif";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: var(--color_dark);
+    margin-bottom: 27px;
+}
+
+.delivery-option {
+    display: flex;
+    flex-direction: row-reverse; 
+    gap: 237px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: var(--trans);
+    margin-bottom: 33px;
+}
+
+.delivery-option input {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.delivery-option input:checked::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: black; 
+    border-radius: 50%;
+    position: absolute;
+    top: 2.2px;
+    left: 2.5px;
+}
+
+.option-content {
+    min-width: 362px;
+}
+
+.option-content .name {
+    margin-bottom: 8px;
+    font-family: "Avenir Next";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    color: var(--small_text);
+}
+
+.street, .address, .phone {
+    font-family: "Avenir Next";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--small_text);
+    margin-bottom: 2px;
+}
+
+.redo {
+    font-family: "Avenir Next";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--color_lite);
+    margin-top: 5px;
+    background: transparent;
+    transition: var(--trans);
+}
+
+.redo:hover {
+    color: var(--small_text);
+}
+
+.addresses .input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.addresses .inputs {
+    margin-bottom: 5px;
+}
+
+.addresses .inputs .input {
+    flex: 0 1 calc(33.33% - 8px);
+    min-width: 137px;
+}
+
+@media (max-width: 1019px) {
+    .addresses {
+        margin-top: 31px;
+        margin-bottom: 40px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .delivery-option {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .option-content {
+        min-width: 230px;
+        max-width: 255px;
+    }
+
+    .inputs {
+        flex-wrap: wrap;
+        gap: 0 69px;
+        flex-direction: row;
+    }
+
+    .addresses .inputs .input {
+        width: 41%;
+        min-width: 137px;
+    }
+}
 
 .wishlist {
     margin-top: 61px;
@@ -212,7 +345,6 @@ h2 {
         width: 296px;
     }
 }
-
 
 .delete, .exit {
     margin-top: 40px;
