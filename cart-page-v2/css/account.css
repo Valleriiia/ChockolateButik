@@ -142,6 +142,146 @@ h2 {
     }
 }
 
+.orders-box {
+    margin-top: 27px;
+    margin-bottom: 106px;
+}
+
+.orders {
+    width: 100%;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+}
+
+thead {
+    margin-bottom: 27px;
+}
+
+th {
+    font-family: "Nyght Serif";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: var(--color_dark);
+}
+
+th, td {
+    padding: 7px;
+    text-align: left;
+}
+
+td, .actions button, td span {
+    font-family: "Avenir Next";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--small_text);
+}
+
+.order-all, .order-num {
+    width: 20%;
+}
+
+.action-btns {
+    display: flex;
+    gap: 34px;
+}
+
+.actions button {
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    transition: var(--trans);
+}
+
+.actions button:hover {
+    color: var(--color_lite);
+}
+
+/* --- МОБІЛЬНА ВЕРСІЯ (СПИСОК КАРТОК) --- */
+@media (max-width: 1019px) {
+    .orders-box {
+        margin-top: 2px;
+        margin-bottom: 40px;
+    }
+
+    table {
+        border: none;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        padding: 20px 0;
+        position: relative; 
+        border-bottom: 2px solid var(--color_lite);
+        gap: 10px;
+    }
+
+    tr:last-of-type {
+        border-bottom-color: var(--color_dark);
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        border: none;
+        width: 70%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-family: "Avenir Next";
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        color: var(--color_lite);
+    }
+
+    .order-date {
+        width: fit-content;
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        color: var(--color_lite);
+    }
+
+    .action-btns {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    td span, .actions button {
+        width: 130px;
+        text-align: left;
+    }
+
+    .order-all, .order-num {
+        width: 70%;
+    }
+
+    .order-all span {
+        font-family: "Avenir Next";
+    }
+}
+
 .addresses {
     margin-top: 27px;
     margin-bottom: 50px;
