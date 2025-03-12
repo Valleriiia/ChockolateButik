@@ -201,7 +201,6 @@ td, .actions button, td span {
     color: var(--color_lite);
 }
 
-/* --- МОБІЛЬНА ВЕРСІЯ (СПИСОК КАРТОК) --- */
 @media (max-width: 1019px) {
     .orders-box {
         margin-top: 2px;
