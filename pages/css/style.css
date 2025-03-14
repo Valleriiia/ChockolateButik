@@ -508,6 +508,7 @@ label.checkbox {
   line-height: 27.32px;
   color: var(--small-text);
   position: relative;
+  transition: var(--trans);
 }
 
 .forgot-pass::after {

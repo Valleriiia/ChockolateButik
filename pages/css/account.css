@@ -156,8 +156,9 @@ table {
     width: 100%;
 }
 
-thead {
-    margin-bottom: 27px;
+th, td {
+    padding: 7px;
+    text-align: left;
 }
 
 th {
@@ -166,12 +167,10 @@ th {
     font-size: 20px;
     line-height: 100%;
     color: var(--color_dark);
+    padding-bottom: 20px;
 }
 
-th, td {
-    padding: 7px;
-    text-align: left;
-}
+
 
 td, .actions button, td span {
     font-family: "Avenir Next";
@@ -467,6 +466,16 @@ h4 {
     top: 2px;
     background-color: transparent;
 }
+
+.item {
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.item.removing {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
 
 @media (max-width: 1019px) {
     .wishlist {
