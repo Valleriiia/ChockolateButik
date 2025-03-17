@@ -68,11 +68,14 @@ main {
     border: 0.5px solid var(--color_lite);
 }
 
-.product-info {
+.product-info-container {
     width: 35%;
     background-color: white;
-    padding: 17px 29px 26px 22px;
     max-height: fit-content;
+}
+
+.product-info {
+    padding: 17px 29px 26px 22px;
 }
 
 h3 {
@@ -165,10 +168,22 @@ h3 {
 
 .slider {
     display: none;
+    position: relative;
+}
+
+.breadcrmb {
+    position: absolute;
+    top: 23px;
+    left: 16px;
+    z-index: 1;
+}
+
+.breadcrmb path {
+    opacity: 50%;
 }
 
 .main_hero_swiper {
-  height: 700px;
+  height: 346px;
 }
 .main_hero_swiper .splide__track {
   height: 100%;
@@ -198,13 +213,14 @@ h3 {
 .splide__pagination__page {
   width: 10px !important;
   height: 10px !important;
-  border: 2px solid #453526 !important;
+  border: 2px solid var(--color_lite) !important;
   opacity: 1 !important;
   background-color: transparent !important;
 }
   
 .splide__pagination__page.is-active {
-  background-color: #453526 !important;
+  background-color: var(--color_lite) !important;
+  transform: scale(1) !important;
 }
   
 .splide__pagination {
@@ -220,6 +236,10 @@ h3 {
   bottom: 0px;
   display: flex;
   max-width: 1530px;
+}
+
+.main_hero_swiper .splide_arrow_custom path {
+    fill: white;
 }
   
 .product-fillters {
@@ -241,6 +261,7 @@ h3 {
 .fillters-container {
     display: flex;
     gap: 24px;
+    flex-wrap: wrap;
 }
 
 .fillter-tab {
@@ -413,4 +434,76 @@ span.shop.active svg path {
 .add-to-cart #splide2 span.like svg path,
 .add-to-cart #splide2 span.shop svg path {
   transition: fill 0.3s ease;
+}
+
+@media (max-width: 1019px) {
+    .product-container {
+        background-color: unset;
+        padding: 0;
+    }
+
+    .breadcrambs, .gallery {
+        display: none;
+    }
+
+    .product-flex {
+        flex-direction: column;
+    }
+
+    .slider {
+        display: block;
+    }
+
+    .product-info-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .product-info {
+        box-shadow: 0px 0px 14px 0px #54483D1A;
+    }
+
+    .product-fillters {
+        margin-top: 31px;
+        padding-bottom: 21px;
+        margin-bottom: 21px;
+    }
+
+    .fillters-container {
+        gap: 10px;
+    }
+
+    .fillter-tab1 {
+        order: 1;
+    }
+
+    .fillter-tab2 {
+        order: 2;
+    }
+
+    .fillter-tab3 {
+        order: 4;
+    }
+
+    .fillter-tab4 {
+        order: 3;
+    }
+
+
+    .product-charact {
+        margin-bottom: 90px;
+    }
+
+    .add-to-cart {
+        margin-bottom: 0;
+    }
+
+    .add-to-cart-header {
+        margin-bottom: 30px;
+    }
+
+    .add-to-cart .arrow_hero {
+        display: none !important;
+    }
 }
