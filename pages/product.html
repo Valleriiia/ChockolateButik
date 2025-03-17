@@ -165,28 +165,67 @@
                     </div>
                     <div class="product-info-container">
                         <div class="product-info">
-                        <h3>Цукерка “Молочне серце”</h3>
-                        <p class="product-price">45 ₴</p>
-                        <p>Шоколадна цукерка ручної роботи "Серце" складається з молочного шоколаду і ніжного кокосового праліне. Особлива технологія виготовлення, поєднання кольорів та блиску надає цим цукерок дивовижний вид.</p>
-                        <br>
-                        <p>Оригінальний подарунок коханій людині, який створить романтичну атмосферу. При виготовленні використовуються тільки натуральні компоненти високої якості.</p>
-                        <div class="quantity-controls">
-                            <button class="minus">-</button>
-                            <span class="quantity">1</span>
-                            <button class="plus">+</button>
+                            <h3>Цукерка “Молочне серце”</h3>
+                            <p class="product-price">45 ₴</p>
+                            <p>Шоколадна цукерка ручної роботи "Серце" складається з молочного шоколаду і ніжного кокосового праліне. Особлива технологія виготовлення, поєднання кольорів та блиску надає цим цукерок дивовижний вид.</p>
+                            <br>
+                            <p>Оригінальний подарунок коханій людині, який створить романтичну атмосферу. При виготовленні використовуються тільки натуральні компоненти високої якості.</p>
+                            <div class="quantity-controls">
+                                <button class="minus">-</button>
+                                <span class="quantity">1</span>
+                                <button class="plus">+</button>
+                            </div>
+                            <div class="buy-like">
+                                <button class="lite_btn">Придбати</button>
+                                <span class="like">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <button class="lite_btn one-click" id="on-click">Замовити в один клік</button>
                         </div>
-                        <div class="buy-like">
-                            <button class="lite_btn">Придбати</button>
-                            <span class="like">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
-                                </svg>
-                            </span>
+                    </div>
+                    <div class="popup" id="popup"> 
+                        <div class="popup-content">
+                            <div class="popup-content-order">
+                                <h3>Швидка покупка</h3>
+                                <div class="cart-items">
+                                    <div class="cart-item">
+                                        <div class="item-top">
+                                            <img src="img/chocolate.png" alt="Шоколадні цукерки">
+                                            <div class="item-text">
+                                                <p class="item-title">Шоколадні цукерки "Молочне серце"</p>
+                                                <p class="item-desc">Опис товару може займати трошки забагато місця, як от у даному прикладі, зазвичай тут можна описати товар</p>
+                                                <p class="item-price">45 ₴</p>
+                                            </div>
+                                        </div>
+                                
+                                        <div class="quantity-controls">
+                                            <button class="minus">-</button>
+                                            <span class="quantity">1</span>
+                                            <button class="plus">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form>
+                                    <div class="input">
+                                        <input type="text" name="name" id="name" placeholder="Ім’я*" required>
+                                    </div>
+                                    <div class="input">
+                                        <input type="tel" name="phone" id="phone" placeholder="Телефон*" required>
+                                    </div>
+                                    <button class="lite_btn">Замовити в один клік</button>
+                                </form>
+                            </div>
+                        
+                            <!-- <div class="popup-content-thanks">
+                                <h3>Дякуємо за замовлення!</h3>
+                                <p>Для уточнення замовлення з Вами звʼяжеться оператор.</p>
+                            </div>    -->
+                            <button class="close-btn" id="close-popup">+</button>
                         </div>
-                        <button class="lite_btn one-click">Замовити в один клік</button>
                     </div>
-                    </div>
-                    
                 </div>
             </div>
         <div class="container">
@@ -482,5 +521,6 @@
     <script src="./js/splide.min.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/quantity.js"></script>
+    <script src="./js/popup.js"></script>
 </body>
 </html>
