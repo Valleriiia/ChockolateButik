@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
     <link rel="stylesheet" href="./css/product.css">
-    <!-- splide.js -->
-    <link rel="stylesheet" href="./css/splide.min.css">
     <title>Product</title>
 </head>
 <body>
@@ -106,6 +107,7 @@
     </header>
     <main>
         <div class="product-container">
+            <div class="container">
                 <div class="breadcrambs">
                     <a href="./">Головна</a>
                     <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,6 +129,10 @@
                             <img src="./img/product_photo4_small.jpg" alt="thumb2" onclick="changeImage('./img/product_photo4.jpg')">
                             <img src="./img/product_photo2_small.jpg" alt="thumb3" onclick="changeImage('./img/product_photo2.jpg')">
                             <img src="./img/product_photo3_small.png" alt="thumb4" onclick="changeImage('./img/product_photo3.png')">
+                            <img src="./img/product_photo1.jpg" alt="thumb1" onclick="changeImage('./img/product_photo1.jpg')">
+                            <img src="./img/product_photo4_small.jpg" alt="thumb2" onclick="changeImage('./img/product_photo4.jpg')">
+                            <img src="./img/product_photo2_small.jpg" alt="thumb3" onclick="changeImage('./img/product_photo2.jpg')">
+                            <img src="./img/product_photo3_small.png" alt="thumb4" onclick="changeImage('./img/product_photo3.png')">
                         </div>
                     </div>
                     <div class="slider">
@@ -135,32 +141,28 @@
                                 <path d="M8 -3.11854e-07L12 0L12 10L12 20L8 20L-9.90966e-07 10L8 -3.11854e-07Z" fill="#ECE5DB"/>
                             </svg>
                         </a>
-                        <div class="splide main_hero_swiper" id="splide">
-                            <div class="splide__arrows arrow_hero">
-                                <button class="splide__arrow splide__arrow--prev splide_arrow_custom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
-                                        <path d="M6.34576 31L0 31L-6.77527e-07 15.5L-1.35505e-06 0L6.34576 -7.2751e-07L19.0373 15.5L6.34576 31Z" fill="#ECE5DB"/>
-                                    </svg>
-                                </button>
-                                <button class="splide__arrow splide__arrow--next splide_arrow_custom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
-                                        <path d="M6.34576 31L0 31L-6.77527e-07 15.5L-1.35505e-06 0L6.34576 -7.2751e-07L19.0373 15.5L6.34576 31Z" fill="#ECE5DB"/>
-                                    </svg>
-                                </button>
+                        <div class="swiper" id="swiper1">
+                            <div class="swiper-wrapper">
+                                <!-- Слайди -->
+                                <div class="swiper-slide"><img src="./img/product_photo2.jpg" alt=""></div>
+                                <div class="swiper-slide"><img src="./img/product_photo1.jpg" alt="Фото 2"></div>
+                                <div class="swiper-slide"><img src="./img/product_photo3.png" alt="Фото 3"></div>
                             </div>
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    <li class="splide__slide">
-                                        <img src="./img/slider_photo1.jpg" alt="photo candy">
-                                    </li>
-                                    <li class="splide__slide">
-                                        <img src="./img/slider_photo2.jpg" alt="photo candy">
-                                    </li>
-                                    <li class="splide__slide">
-                                        <img src="./img/slider_photo3.png" alt="photo candy">
-                                    </li>
-                                </ul>
+                        
+                            <!-- Стрілки навігації -->
+                            <div class="swiper-button-prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
+                                    <path d="M6.34576 31L0 31L-6.77527e-07 15.5L-1.35505e-06 0L6.34576 -7.2751e-07L19.0373 15.5L6.34576 31Z" fill="#ECE5DB"/>
+                                </svg>
                             </div>
+                            <div class="swiper-button-next">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
+                                    <path d="M6.34576 31L0 31L-6.77527e-07 15.5L-1.35505e-06 0L6.34576 -7.2751e-07L19.0373 15.5L6.34576 31Z" fill="#ECE5DB"/>
+                                </svg>
+                            </div>
+                        
+                            <!-- Точки пагінації -->
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                     <div class="product-info-container">
@@ -187,7 +189,7 @@
                         </div>
                     </div>
                     <div class="popup" id="popup"> 
-                        <div class="popup-content">
+                        <div class="popup-content" id="popup-content1">
                             <div class="popup-content-order">
                                 <h3>Швидка покупка</h3>
                                 <div class="cart-items">
@@ -208,26 +210,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form>
+                                <form id="popup-form">
                                     <div class="input">
                                         <input type="text" name="name" id="name" placeholder="Ім’я*" required>
                                     </div>
                                     <div class="input">
                                         <input type="tel" name="phone" id="phone" placeholder="Телефон*" required>
                                     </div>
-                                    <button class="lite_btn">Замовити в один клік</button>
+                                    <button type="submit" class="lite_btn">Замовити в один клік</button>
                                 </form>
                             </div>
                         
-                            <!-- <div class="popup-content-thanks">
+                            <button class="close-btn">+</button>
+                        </div>
+                        <div class="popup-content" id="popup-content2">
+                            <div class="popup-content-thanks" id="popup-content-thanks">
                                 <h3>Дякуємо за замовлення!</h3>
                                 <p>Для уточнення замовлення з Вами звʼяжеться оператор.</p>
-                            </div>    -->
-                            <button class="close-btn" id="close-popup">+</button>
+                            </div>  
+                            <button class="close-btn">+</button> 
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         <div class="container">
             <div class="product-fillters">
                 <p>Результат пошуку за фільтрами:</p>
@@ -247,173 +253,175 @@
                 <p>Також можете підписатися на нашу групу в Instagram і Facebook <br>
                     Для оптових клієнтів діє система знижок. Доставка здійснюється по всій території України.</p>
             </div>
-            <div class="add-to-cart">
+        </div>
+        <div class="add-to-cart">
+            <div class="container">
                 <h3 class="add-to-cart-header">Додати до кошика:</h3>
-                <div id="splide2" class="splide">
-                    <div class="splide__arrows arrow_hero">
-                        <button class="splide__arrow splide__arrow--prev splide_arrow_custom">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
-                                <path d="M6.34576 31L0 31L-6.77527e-07 15.5L-1.35505e-06 0L6.34576 -7.2751e-07L19.0373 15.5L6.34576 31Z" fill="#ECE5DB"/>
-                            </svg>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next splide_arrow_custom">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
-                                <path d="M6.34576 31L0 31L-6.77527e-07 15.5L-1.35505e-06 0L6.34576 -7.2751e-07L19.0373 15.5L6.34576 31Z" fill="#ECE5DB"/>
-                            </svg>
-                        </button>
+            </div>
+                
+                <div class="swiper" id="swiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide_link">
+                                <div class="slide_img">
+                                    <img loading="lazy" src="./img/chocolet1.png" alt="photo candy">
+                                    <div class="btn">
+                                        <span class="like">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
+                                            </svg>
+                                        </span>
+                                        <span class="shop">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
+                                                <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
+                                                <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                                <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slide_info">
+                                    <h3>Шоколадні цукерки "Молочне серце”</h3>
+                                    <h4>
+                                        <!-- <span>45 ₴</span> -->
+                                        45₴
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_link">
+                                <div class="slide_img">
+                                    <img loading="lazy" src="./img/chocolet2.png" alt="photo candy">
+                                    <div class="btn">
+                                        <span class="like">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
+                                            </svg>
+                                        </span>
+                                        <span class="shop">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
+                                                <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
+                                                <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                                <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slide_info">
+                                    <h3>Шоколадні цукерки "Молочне серце”</h3>
+                                    <h4>
+                                        <!-- <span>45 ₴</span> -->
+                                        45₴
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_link">
+                                <div class="slide_img">
+                                    <img loading="lazy" src="./img/chocolet3.png" alt="photo candy">
+                                    <div class="btn">
+                                        <span class="like">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
+                                            </svg>
+                                        </span>
+                                        <span class="shop">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
+                                                <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
+                                                <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                                <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slide_info">
+                                    <h3>Шоколадні цукерки "Молочне серце”</h3>
+                                    <h4>
+                                        <!-- <span>45 ₴</span> -->
+                                        45₴
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_link">
+                                <div class="slide_img">
+                                    <img loading="lazy" src="./img/chocolet4.png" alt="photo candy">
+                                    <div class="btn">
+                                        <span class="like">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
+                                            </svg>
+                                        </span>
+                                        <span class="shop">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
+                                                <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
+                                                <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                                <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slide_info">
+                                    <h3>Шоколадні цукерки "Молочне серце”</h3>
+                                    <h4>
+                                        <!-- <span>45 ₴</span> -->
+                                        45₴
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_link">
+                                <div class="slide_img">
+                                    <img loading="lazy" src="./img/chocolet5.png" alt="photo candy">
+                                    <div class="btn">
+                                        <span class="like">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
+                                            </svg>
+                                        </span>
+                                        <span class="shop">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
+                                                <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
+                                                <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                                <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slide_info">
+                                    <h3>Шоколадні цукерки "Молочне серце”</h3>
+                                    <h4>
+                                        <!-- <span>45 ₴</span> -->
+                                        45₴
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <div class="slide_link">
-                                    <div class="slide_img">
-                                        <img loading="lazy" src="./img/chocolet1.png" alt="photo candy">
-                                        <div class="btn">
-                                            <span class="like">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
-                                                </svg>
-                                            </span>
-                                            <span class="shop">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                                    <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
-                                                    <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                    <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="slide_info">
-                                        <h3>Шоколадні цукерки "Молочне серце”</h3>
-                                        <h4>
-                                            <!-- <span>45 ₴</span> -->
-                                            45₴
-                                        </h4>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="slide_link">
-                                    <div class="slide_img">
-                                        <img loading="lazy" src="./img/chocolet2.png" alt="photo candy">
-                                        <div class="btn">
-                                            <span class="like">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
-                                                </svg>
-                                            </span>
-                                            <span class="shop">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                                    <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
-                                                    <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                    <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="slide_info">
-                                        <h3>Шоколадні цукерки "Молочне серце”</h3>
-                                        <h4>
-                                            <!-- <span>45 ₴</span> -->
-                                            45₴
-                                        </h4>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="slide_link">
-                                    <div class="slide_img">
-                                        <img loading="lazy" src="./img/chocolet3.png" alt="photo candy">
-                                        <div class="btn">
-                                            <span class="like">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
-                                                </svg>
-                                            </span>
-                                            <span class="shop">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                                    <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
-                                                    <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                    <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="slide_info">
-                                        <h3>Шоколадні цукерки "Молочне серце”</h3>
-                                        <h4>
-                                            <!-- <span>45 ₴</span> -->
-                                            45₴
-                                        </h4>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="slide_link">
-                                    <div class="slide_img">
-                                        <img loading="lazy" src="./img/chocolet4.png" alt="photo candy">
-                                        <div class="btn">
-                                            <span class="like">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
-                                                </svg>
-                                            </span>
-                                            <span class="shop">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                                    <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
-                                                    <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                    <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="slide_info">
-                                        <h3>Шоколадні цукерки "Молочне серце”</h3>
-                                        <h4>
-                                            <!-- <span>45 ₴</span> -->
-                                            45₴
-                                        </h4>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="slide_link">
-                                    <div class="slide_img">
-                                        <img loading="lazy" src="./img/chocolet5.png" alt="photo candy">
-                                        <div class="btn">
-                                            <span class="like">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M3.66275 13.2136L9.82377 19.7066C11.0068 20.9533 12.9932 20.9534 14.1762 19.7066L20.3372 13.2136C22.5542 10.8771 22.5543 7.08895 20.3373 4.75248C18.1203 2.416 14.5258 2.416 12.3088 4.75248V4.75248C12.1409 4.92938 11.8591 4.92938 11.6912 4.75248V4.75248C9.47421 2.416 5.87975 2.416 3.66275 4.75248C1.44575 7.08895 1.44575 10.8771 3.66275 13.2136Z" stroke="#E8E0D3" stroke-width="1.5"/>
-                                                </svg>
-                                            </span>
-                                            <span class="shop">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                                    <path d="M1 1L2.04936 1.20987C2.91136 1.38227 3.55973 2.09732 3.6472 2.97203L3.8 4.5M3.8 4.5L4.7886 12.7383C4.90922 13.7435 5.76195 14.5 6.77435 14.5H15.7673C17.3733 14.5 18.7733 13.407 19.1628 11.8489L20.2855 7.35783C20.6485 5.90619 19.5505 4.5 18.0542 4.5H3.8Z" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round"/>
-                                                    <path d="M12 11.5H8" stroke="#E8E0D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <circle cx="7.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                    <circle cx="16.5" cy="18" r="1.5" fill="#E8E0D3"/>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="slide_info">
-                                        <h3>Шоколадні цукерки "Молочне серце”</h3>
-                                        <h4>
-                                            <!-- <span>45 ₴</span> -->
-                                            45₴
-                                        </h4>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                
+                    <!-- Кнопки навігації -->
+                    <div class="swiper-button-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
+                            <path d="M6.34576 31L0 31L-6.77527e-07 15.5L-1.35505e-06 0L6.34576 -7.2751e-07L19.0373 15.5L6.34576 31Z" fill="#ECE5DB"/>
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
+                            <path d="M6.34576 31L0 31L-6.77527e-07 15.5L-1.35505e-06 0L6.34576 -7.2751e-07L19.0373 15.5L6.34576 31Z" fill="#ECE5DB"/>
+                        </svg>
                     </div>
                 </div>
+                
             </div>
-        </div>
     </main>
     <footer>
         <div class="top">
@@ -518,9 +526,11 @@
         </div>
     </footer>
 
-    <script src="./js/splide.min.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/quantity.js"></script>
     <script src="./js/popup.js"></script>
+    <!-- Swiper JS -->
+    <script src="./js/swiper-bundle.min.js"></script>
+
 </body>
 </html>

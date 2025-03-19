@@ -1,12 +1,3 @@
-// slider main 
-document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#splide', {
-        type: 'fade',
-        breakpoints: {
-        },
-    }).mount();
-});
-
 // like click
 document.querySelectorAll('.like, .shop').forEach(button => {
     button.addEventListener('click', () => {
@@ -14,21 +5,32 @@ document.querySelectorAll('.like, .shop').forEach(button => {
     });
 });
 
-// slider_new
-document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#splide2', {
-        type: 'loop',
-        drag: 'free',
-        focus: 'center',
-        perPage: 6,
-        gap: '20px',
-        pagination: false,
-        breakpoints: {
-        },
-    }).mount();
-
-});
-
 function changeImage(imageSrc) {
     document.getElementById('mainImg').src = imageSrc;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper("#swiper1", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper("#swiper2", {
+        slidesPerView: "auto", 
+        spaceBetween: 24, 
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+});
