@@ -46,6 +46,7 @@ main {
 
 .gallery {
     width: calc(99% - 457px);
+    max-width: 695px;
 }
 
 .main-image {  
