@@ -497,6 +497,7 @@ span.shop.active svg path {
 
     .product-flex {
         flex-direction: column;
+        gap: 20px;
     }
 
     .slider {
