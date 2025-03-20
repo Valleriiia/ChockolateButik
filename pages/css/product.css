@@ -49,6 +49,12 @@ main {
     max-width: 750px;
 }
 
+@media (max-width: 1400px) {
+    .gallery {
+        max-width: 500px;
+    }
+}
+
 .main-image {  
     overflow: hidden;
     height: 365px;
