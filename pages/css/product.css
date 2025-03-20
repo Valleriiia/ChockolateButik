@@ -10,8 +10,8 @@ main {
 
 .product-flex {
     display: flex;
-    gap: 50px;
-    justify-content: space-between;
+    gap: 100px;
+    justify-content: start;
 }
 
 .breadcrambs {
@@ -45,8 +45,8 @@ main {
 }
 
 .gallery {
-    width: calc(99% - 457px - 50px);
-    max-width: 695px;
+    width: 100%;
+    max-width: 750px;
 }
 
 .main-image {  
@@ -382,11 +382,11 @@ span.shop.active svg path {
   width: 100%;
 }
 .add-to-cart #swiper2 .swiper-button-prev {
-  left: 20px;
+  left: 100px;
   bottom: 0 !important;
 }
 .add-to-cart #swiper2 .swiper-button-next {
-  right: 20px;
+  right: 100px;
   bottom: 0 !important;
 }
 .add-to-cart #swiper2 .swiper-wrapper {
