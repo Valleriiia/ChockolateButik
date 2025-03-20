@@ -45,14 +45,8 @@ main {
 }
 
 .gallery {
-    width: 100%;
+    width: calc(100% - 457px - 100px);
     max-width: 750px;
-}
-
-@media (max-width: 1400px) {
-    .gallery {
-        max-width: 500px;
-    }
 }
 
 .main-image {  
