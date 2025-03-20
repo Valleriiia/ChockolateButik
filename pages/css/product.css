@@ -10,7 +10,7 @@ main {
 
 .product-flex {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     justify-content: space-between;
 }
 
@@ -45,7 +45,7 @@ main {
 }
 
 .gallery {
-    width: calc(99% - 457px);
+    width: calc(99% - 457px - 50px);
     max-width: 695px;
 }
 
