@@ -25,16 +25,16 @@
 
 @font-face {
     font-family: 'Avenir Next';
-    src: url('https://nazarkokril.github.io/chocolate-butik/fonts/AvenirNext/AvenirNextCyr-Regular.woff2') format('woff2'),
-        url('https://nazarkokril.github.io/chocolate-butik/fonts/AvenirNext/AvenirNextCyr-Regular.woff') format('woff');
+    src: url('../fonts/AvenirNext/AvenirNextCyr-Regular.woff2') format('woff2'),
+        url('../fonts/AvenirNext/AvenirNextCyr-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Avenir Next';
-    src: url('https://nazarkokril.github.io/chocolate-butik/fonts/AvenirNext/AvenirNextCyr-Medium.woff2') format('woff2'),
-        url('https://nazarkokril.github.io/chocolate-butik/fonts/AvenirNext/AvenirNextCyr-Medium.woff') format('woff');
+    src: url('../fonts/AvenirNext/AvenirNextCyr-Medium.woff2') format('woff2'),
+        url('../fonts/AvenirNext/AvenirNextCyr-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
